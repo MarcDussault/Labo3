@@ -99,34 +99,34 @@ public class Fenetre2 extends JFrame {
 		
 		JPanel panelDroite = new JPanel();
 		panelDroite.setBorder(BorderFactory.createTitledBorder("Zone de dessin"));
-		panelDroite.setBackground(Color.BLUE);
+		//panelDroite.setBackground(Color.BLUE);
 		panelGlobal.add(panelDroite, BorderLayout.CENTER);
 		
 		panelVignette = new JPanel();
 		
 		panelVignette.setSize(new Dimension(150,150));
 		panelVignette.setBorder(BorderFactory.createTitledBorder("Vignette"));
-        panelVignette.setBackground(Color.RED);
+        //panelVignette.setBackground(Color.RED);
         panelVignette.setName("Vignette");
         
   		JPanel panelOutils = new JPanel();
 		panelOutils.setPreferredSize(new Dimension(60,120));
 		panelOutils.setBorder(BorderFactory.createTitledBorder("Outils"));
-        panelOutils.setBackground(Color.GREEN);
+        //panelOutils.setBackground(Color.GREEN);
         panelOutils.setName("Outils");
         
         
         JPanel panelTranslation = new JPanel();
         panelTranslation.setPreferredSize(new Dimension(150,150));
         panelTranslation.setBorder(BorderFactory.createTitledBorder("Translation"));
-        panelTranslation.setBackground(Color.YELLOW);
+        //panelTranslation.setBackground(Color.YELLOW);
         panelTranslation.setName("Translation");
         panelOutils.add(panelTranslation, BorderLayout.NORTH);
         
         JPanel panelZoom = new JPanel();
         panelZoom.setPreferredSize(new Dimension(150,150));
         panelZoom.setBorder(BorderFactory.createTitledBorder("Zoom"));
-        panelZoom.setBackground(Color.CYAN);
+        //panelZoom.setBackground(Color.CYAN);
         panelZoom.setName("ZOOM");
         panelOutils.add(panelZoom, BorderLayout.CENTER);
         
