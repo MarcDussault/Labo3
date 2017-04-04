@@ -1,13 +1,17 @@
 package Views;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.imageio.ImageIO;
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,9 +34,9 @@ import java.io.IOException;
 
 public class Fenetre2 extends JFrame {
 
+	
 	private JPanel contentPane;
 	private JPanel panelVignette;
-
 	
 
 	void insererImageVignette() throws IOException 
@@ -56,8 +60,8 @@ public class Fenetre2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Fenetre2 frame = new Fenetre2();
-					frame.setVisible(true);
+					Fenetre2 frame2 = new Fenetre2();
+					frame2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -70,6 +74,8 @@ public class Fenetre2 extends JFrame {
 	 * @throws IOException 
 	 */
 	public Fenetre2() throws IOException {
+		
+		//JFrame frame = new JFrame();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JFileChooser selecteurFichier = new JFileChooser();
@@ -137,21 +143,23 @@ public class Fenetre2 extends JFrame {
 		
 		JPanel panelGlobal = new JPanel(new BorderLayout(1,1));
 		contentPane.add(panelGlobal, BorderLayout.CENTER);
-		
+	
 		JPanel panelGauche = new JPanel(new BorderLayout(3,3));
 		panelGlobal.add(panelGauche, BorderLayout.WEST);
+		
 		
 		JPanel panelDroite = new JPanel();
 		panelDroite.setBorder(BorderFactory.createTitledBorder("Zone de dessin"));
 		//panelDroite.setBackground(Color.BLUE);
 		panelGlobal.add(panelDroite, BorderLayout.CENTER);
 		
-		panelVignette = new JPanel();
+		panelVignette = new VueVignette();
+		/*panelVignette = new JPanel();
 		
 		panelVignette.setSize(new Dimension(160,160));
 		panelVignette.setBorder(BorderFactory.createTitledBorder("Vignette"));
-        //panelVignette.setBackground(Color.RED);
-        panelVignette.setName("Vignette");
+        panelVignette.setBackground(Color.RED);
+        panelVignette.setName("Vignette");*/
         
   		JPanel panelOutils = new JPanel();
 		panelOutils.setPreferredSize(new Dimension(60,160));
@@ -167,6 +175,45 @@ public class Fenetre2 extends JFrame {
         panelTranslation.setName("Translation");
         panelOutils.add(panelTranslation, BorderLayout.NORTH);
         
+        JButton btHaut = new JButton("up");
+        //btGauche.setVerticalTextPosition(AbstractButton.CENTER);
+        //btGauche.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
+        //btGauche.setMnemonic(KeyEvent.VK_D);
+       // btGauche.setActionCommand("disable");
+        btHaut.setSize(new Dimension(200,200));
+        //btHaut.setIcon(iconBoutonDroite);
+        panelTranslation.add(btHaut, BorderLayout.NORTH);
+        
+        ImageIcon iconBoutonGauche = createImageIcon("flecheGauche.png");
+        
+        JButton btGauche = new JButton("<-",iconBoutonGauche);
+        //btGauche.setVerticalTextPosition(AbstractButton.CENTER);
+        //btGauche.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
+        //btGauche.setMnemonic(KeyEvent.VK_D);
+       // btGauche.setActionCommand("disable");
+        btGauche.setSize(new Dimension(200,200));
+        panelTranslation.add(btGauche, BorderLayout.WEST);
+        
+        ImageIcon iconBoutonDroite = createImageIcon("flecheDroite.png");
+        
+        JButton btDroite = new JButton("->");
+        //btGauche.setVerticalTextPosition(AbstractButton.CENTER);
+        //btGauche.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
+        //btGauche.setMnemonic(KeyEvent.VK_D);
+       // btGauche.setActionCommand("disable");
+        btDroite.setSize(new Dimension(100,100));
+        btDroite.setIcon(iconBoutonDroite);
+        panelTranslation.add(btDroite, BorderLayout.EAST);
+        
+        JButton btBas = new JButton("down");
+        //btGauche.setVerticalTextPosition(AbstractButton.CENTER);
+        //btGauche.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
+        //btGauche.setMnemonic(KeyEvent.VK_D);
+       // btGauche.setActionCommand("disable");
+        btBas.setSize(new Dimension(100,100));
+        btBas.setIcon(iconBoutonDroite);
+        panelTranslation.add(btBas, BorderLayout.SOUTH);
+        
         JPanel panelZoom = new JPanel();
         panelZoom.setPreferredSize(new Dimension(140,140));
         panelZoom.setBorder(BorderFactory.createTitledBorder("Zoom"));
@@ -174,11 +221,18 @@ public class Fenetre2 extends JFrame {
         panelZoom.setName("ZOOM");
         panelOutils.add(panelZoom, BorderLayout.CENTER);
         
+        
+        
         panelGauche.add(panelVignette, BorderLayout.NORTH);
         panelGauche.add(panelOutils, BorderLayout.CENTER);
         
         insererImageVignette();
 		
+	}
+	
+	public ImageIcon createImageIcon(String path)
+	{
+	    return new ImageIcon(path);
 	}
 	
 }
