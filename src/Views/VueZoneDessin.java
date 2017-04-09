@@ -8,7 +8,8 @@ import javax.swing.JPanel;
 
 public class VueZoneDessin
 {
-
+	
+	
 	public VueZoneDessin(JPanel panelGlobal)
 	{
 		JPanel panelDroite = new JPanel();
