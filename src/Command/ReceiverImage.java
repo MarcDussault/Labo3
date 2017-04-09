@@ -1,10 +1,6 @@
 package Command;
 
 //this is the receiver
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
 public class ReceiverImage {
 	
 	public void ImageZoomIn() {

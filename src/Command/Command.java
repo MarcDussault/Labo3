@@ -25,10 +25,4 @@ public interface Command {
 	   }
 	   return instance;
 	}
-=======
-	
-	public void execute();
-	public void cancel();
->>>>>>> refs/remotes/origin/master
-
 }
