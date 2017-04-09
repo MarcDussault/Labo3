@@ -1,7 +1,7 @@
 package Command;
 
 public interface Command {
-<<<<<<< HEAD
+	
 	public static CommandManager  commandManager = getInstance();
 	
 	public void execute();
