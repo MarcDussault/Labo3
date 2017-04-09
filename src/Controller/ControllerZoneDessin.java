@@ -10,8 +10,7 @@ import Views.*;
 
 public class ControllerZoneDessin implements MouseInputListener, MouseWheelListener {
 
-	private Modeles theModel;
-	
+	private Modeles theModel;	
 	private VueZoneDessin  vueZoneDessin;
 	
 	

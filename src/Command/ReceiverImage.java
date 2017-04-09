@@ -1,7 +1,6 @@
 package Command;
 
 //this is the receiver
-
 public class ReceiverImage {
 	
 	public void ImageZoomIn() {

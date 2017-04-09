@@ -1,6 +1,8 @@
 package Command;
 
-public class CommandZoomOut {
+
+public class CommandZoomOut implements Command{
+
 	private ReceiverImage theImage;
 
 	public CommandZoomOut (ReceiverImage image) {
@@ -8,6 +10,12 @@ public class CommandZoomOut {
 	}
 
 	public void execute (){
+		theImage.ImageZoomOut();
+	}
+
+	@Override
+	public void annule() {
+		// TODO Auto-generated method stub
 		theImage.Undo();
 	}
 }

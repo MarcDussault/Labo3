@@ -8,16 +8,16 @@ import Views.*;
 
 public class ControllerOutils implements ActionListener{
 
-	private Modeles theModel;
-	
+	private Modeles theModel;	
 	private VueOutils outils;
 	
-	
-	
+		
 	public ControllerOutils(Modeles model, VueOutils vueOutils)
 	{
 		this.theModel = model;
-		this.outils = outils;
+		this.outils = vueOutils;
+		
+
 	}
 
 
