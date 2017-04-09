@@ -18,7 +18,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Fenetre extends JFrame
 {
 
+<<<<<<< HEAD
 	public ClasseMain classeMain = new ClasseMain();
+=======
+	public ClasseMain classeMain;
+>>>>>>> refs/remotes/origin/master
 	public VueVignette vueVignette;
 	
 	
@@ -38,7 +42,11 @@ public class Fenetre extends JFrame
 			String extFichier = strFichier.substring(strFichier.lastIndexOf("."));
 			if (extFichier.equals(".jpg"))
 			{
+<<<<<<< HEAD
 				System.out.println("appel de classe main pour inserer image");
+=======
+				System.out.println(strFichier);
+>>>>>>> refs/remotes/origin/master
 				ClasseMain.insererImageVignette(strFichier);
 			}
 			else

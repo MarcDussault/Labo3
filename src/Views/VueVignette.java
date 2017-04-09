@@ -32,15 +32,23 @@ public class VueVignette extends JPanel
 	
 	public void insererImageVignette(String str) throws IOException 
 	{
+<<<<<<< HEAD
 		
 		BufferedImage myPicture = ImageIO.read(new File("Warriors.jpg"));
+=======
+		panelVignette.removeAll();
+		BufferedImage myPicture = ImageIO.read(new File(str));
+>>>>>>> refs/remotes/origin/master
 		Image myPictureResized = myPicture.getScaledInstance(panelVignette.getWidth() - 30, panelVignette.getHeight() - 30, Image.SCALE_SMOOTH );
 		ImageIcon imageIcon = new ImageIcon(myPictureResized);
 		JLabel picLabel = new JLabel(imageIcon);
 		//Image scaledImage = originalImage.getScaledInstance(jPanel.getWidth(),jPanel.getHeight(),Image.SCALE_SMOOTH);
 		panelVignette.add(picLabel);
+<<<<<<< HEAD
 		
 		//panelGauche.add(panelVignette, BorderLayout.NORTH);
 		//ClasseMain.
+=======
+>>>>>>> refs/remotes/origin/master
 	}
 }

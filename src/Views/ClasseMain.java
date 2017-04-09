@@ -46,10 +46,17 @@ public class ClasseMain
 	
 	public static void insererImageVignette (String strFichier) /*throws IOException*/
 	{
+<<<<<<< HEAD
 		System.out.println("appel de vue vignette pour inserer image");
 		try
 		{
 			vueVignette.insererImageVignette(strFichier);
+=======
+		try
+		{
+			vueVignette.insererImageVignette(strFichier);
+			vueZoneDessin.insererImage(strFichier);
+>>>>>>> refs/remotes/origin/master
 		}
 		catch (IOException e)
 		{
@@ -57,6 +64,11 @@ public class ClasseMain
 		}
 		panelGauche.revalidate();
 		panelGauche.repaint();
+<<<<<<< HEAD
+=======
+		/*panelGlobal.revalidate();
+		panelGlobal.repaint();*/
+>>>>>>> refs/remotes/origin/master
 	}
 	
 	public static void main(String[] args)
