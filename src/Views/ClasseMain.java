@@ -5,6 +5,7 @@ import Modeles.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,6 +19,8 @@ public class ClasseMain
 	public static VueVignette vueVignette ;
 	public static VueOutils vueOutils ;
 	public static VueZoneDessin vueZoneDessin ;
+	public static JPanel panelGauche;
+	public static JPanel panelGlobal;
 	
 	public static void CreationFenetre()
 	{
@@ -29,16 +32,33 @@ public class ClasseMain
 		contentPane.setLayout(new BorderLayout(0, 0));
 		frame.setContentPane(contentPane);
 		
-		JPanel panelGlobal = new JPanel(new BorderLayout(1,1));
+		panelGlobal = new JPanel(new BorderLayout(1,1));
 		contentPane.add(panelGlobal, BorderLayout.CENTER);
 		
-		JPanel panelGauche = new JPanel(new BorderLayout(3,3));
+		panelGauche = new JPanel(new BorderLayout(3,3));
 		panelGlobal.add(panelGauche, BorderLayout.WEST);
 		
 		vueVignette = new VueVignette(panelGauche);
 		vueOutils = new VueOutils(panelGauche);
 		vueZoneDessin = new VueZoneDessin(panelGlobal);
-		
+		//insererImageVignette ("lol");
+	}
+	
+	public static void insererImageVignette (String strFichier) /*throws IOException*/
+	{
+		try
+		{
+			vueVignette.insererImageVignette(strFichier);
+			vueZoneDessin.insererImage(strFichier);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		panelGauche.revalidate();
+		panelGauche.repaint();
+		/*panelGlobal.revalidate();
+		panelGlobal.repaint();*/
 	}
 	
 	public static void main(String[] args)
@@ -55,7 +75,9 @@ public class ClasseMain
 				{
 					e.printStackTrace();
 				}
+				
 			}
+		
 		});
 		
 		//Modeles model = new Modeles();
