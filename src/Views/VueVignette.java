@@ -19,20 +19,7 @@ public class VueVignette extends JPanel
 	
 	JPanel panelVignette ;
 	
-	public void insererImageVignette() throws IOException 
-	{
-		
-		BufferedImage myPicture = ImageIO.read(new File("Warriors.jpg"));
-		Image myPictureResized = myPicture.getScaledInstance(panelVignette.getWidth() - 30, panelVignette.getHeight() - 30, Image.SCALE_SMOOTH );
-		ImageIcon imageIcon = new ImageIcon(myPictureResized);
-		
-		JLabel picLabel = new JLabel(imageIcon);
-		System.out.println("inserer image vignette");	
-		//Image scaledImage = originalImage.getScaledInstance(jPanel.getWidth(),jPanel.getHeight(),Image.SCALE_SMOOTH);
-		panelVignette.add(picLabel);
-		//panelGauche.add(panelVignette, BorderLayout.NORTH);
-		//ClasseMain.
-	}
+	
 	
 	public VueVignette(JPanel panelGauche)
 	{
@@ -43,5 +30,14 @@ public class VueVignette extends JPanel
         panelGauche.add(panelVignette, BorderLayout.NORTH);
 	}
 	
-	
+	public void insererImageVignette(String str) throws IOException 
+	{
+		panelVignette.removeAll();
+		BufferedImage myPicture = ImageIO.read(new File(str));
+		Image myPictureResized = myPicture.getScaledInstance(panelVignette.getWidth() - 30, panelVignette.getHeight() - 30, Image.SCALE_SMOOTH );
+		ImageIcon imageIcon = new ImageIcon(myPictureResized);
+		JLabel picLabel = new JLabel(imageIcon);
+		//Image scaledImage = originalImage.getScaledInstance(jPanel.getWidth(),jPanel.getHeight(),Image.SCALE_SMOOTH);
+		panelVignette.add(picLabel);
+	}
 }

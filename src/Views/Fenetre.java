@@ -19,8 +19,10 @@ public class Fenetre extends JFrame
 {
 
 	public ClasseMain classeMain;
+	public VueVignette vueVignette;
 	
-	private void InsererImage() 
+	
+	public void InsererImage() 
 	{
 		JFileChooser selecteurFichier = new JFileChooser();
 		selecteurFichier.setCurrentDirectory(new File(System.getProperty("user.home")));
@@ -29,21 +31,15 @@ public class Fenetre extends JFrame
 		selecteurFichier.setFileFilter(filtreJPG);
 		int fichierChoisi = selecteurFichier.showOpenDialog(getParent());
 		
-		if (fichierChoisi == selecteurFichier.APPROVE_OPTION)
+		if (fichierChoisi == JFileChooser.APPROVE_OPTION)
 		{
 			File fichierSelectionner = selecteurFichier.getSelectedFile();
 			String strFichier = fichierSelectionner.getName();
 			String extFichier = strFichier.substring(strFichier.lastIndexOf("."));
 			if (extFichier.equals(".jpg"))
 			{
-				try 
-				{
-					classeMain.vueVignette.insererImageVignette();
-				} 
-				catch (IOException e1)
-				{
-					e1.printStackTrace();
-				}
+				System.out.println(strFichier);
+				ClasseMain.insererImageVignette(strFichier);
 			}
 			else
 			{
