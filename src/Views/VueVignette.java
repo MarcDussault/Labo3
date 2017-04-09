@@ -1,23 +1,46 @@
 package Views;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class VueVignette extends JPanel
 {
-	private JPanel panelVignette;
 	
-	public VueVignette()
+	JPanel panelVignette ;
+	
+	public void insererImageVignette() throws IOException 
+	{
+		
+		BufferedImage myPicture = ImageIO.read(new File("Warriors.jpg"));
+		Image myPictureResized = myPicture.getScaledInstance(panelVignette.getWidth() - 30, panelVignette.getHeight() - 30, Image.SCALE_SMOOTH );
+		ImageIcon imageIcon = new ImageIcon(myPictureResized);
+		
+		JLabel picLabel = new JLabel(imageIcon);
+		System.out.println("inserer image vignette");	
+		//Image scaledImage = originalImage.getScaledInstance(jPanel.getWidth(),jPanel.getHeight(),Image.SCALE_SMOOTH);
+		panelVignette.add(picLabel);
+		//panelGauche.add(panelVignette, BorderLayout.NORTH);
+		//ClasseMain.
+	}
+	
+	public VueVignette(JPanel panelGauche)
 	{
 		panelVignette = new JPanel();
-		
-		panelVignette.setSize(new Dimension(160,160));
+		panelVignette.setPreferredSize(new Dimension(150,150));
+		//panelVignette.setSize(new Dimension(160,160));
 		panelVignette.setBorder(BorderFactory.createTitledBorder("Vignette"));
-        panelVignette.setBackground(Color.RED);
-        panelVignette.setName("Vignette");
+        panelGauche.add(panelVignette, BorderLayout.NORTH);
 	}
 	
 	
