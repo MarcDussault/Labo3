@@ -7,6 +7,7 @@ import java.util.List;
 
 public class CommandManager {
 
+<<<<<<< HEAD
 	public ArrayList<Command> commandList = new ArrayList<Command>();
 	
 	private static int actualIndex = 0;
@@ -65,6 +66,23 @@ public class CommandManager {
 
 	public static void setMaxIndex(int maxIndex) {
 		CommandManager.maxIndex = maxIndex;
+=======
+	public List<Command> commadList;
+	
+	public CommandManager(){
+		
+		this.commadList = new ArrayList<Command>();
+	}
+	
+	public void addCommand(Command command){
+		this.commadList.add(command);
+	}
+	
+	public void executeCommand(){
+		for (Command command :this.commadList){
+			command.execute();
+		}
+>>>>>>> refs/remotes/origin/master
 	}
 }
 

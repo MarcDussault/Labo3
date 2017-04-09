@@ -1,6 +1,7 @@
 package Command;
 
 public interface Command {
+<<<<<<< HEAD
 	public static CommandManager  commandManager = getInstance();
 	
 	public void execute();
@@ -24,5 +25,10 @@ public interface Command {
 	   }
 	   return instance;
 	}
+=======
+	
+	public void execute();
+	public void cancel();
+>>>>>>> refs/remotes/origin/master
 
 }

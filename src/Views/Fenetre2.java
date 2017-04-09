@@ -36,7 +36,8 @@ public class Fenetre2 extends JFrame {
 
 	
 	private JPanel contentPane;
-	private JPanel panelVignette;
+	public JPanel panelVignette;
+	public JPanel panelOutils;
 	
 
 	void insererImageVignette() throws IOException 
@@ -56,7 +57,7 @@ public class Fenetre2 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -67,7 +68,7 @@ public class Fenetre2 extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -153,7 +154,7 @@ public class Fenetre2 extends JFrame {
 		//panelDroite.setBackground(Color.BLUE);
 		panelGlobal.add(panelDroite, BorderLayout.CENTER);
 		
-		panelVignette = new VueVignette();
+		//panelVignette = new VueVignette();
 		/*panelVignette = new JPanel();
 		
 		panelVignette.setSize(new Dimension(160,160));
@@ -161,21 +162,21 @@ public class Fenetre2 extends JFrame {
         panelVignette.setBackground(Color.RED);
         panelVignette.setName("Vignette");*/
         
-  		JPanel panelOutils = new JPanel();
+  		/*JPanel panelOutils = new JPanel();
 		panelOutils.setPreferredSize(new Dimension(60,160));
 		panelOutils.setBorder(BorderFactory.createTitledBorder("Outils"));
         //panelOutils.setBackground(Color.GREEN);
-        panelOutils.setName("Outils");
+        panelOutils.setName("Outils");*/
         
         
-        JPanel panelTranslation = new JPanel();
+        /*JPanel panelTranslation = new JPanel();
         panelTranslation.setPreferredSize(new Dimension(140,140));
         panelTranslation.setBorder(BorderFactory.createTitledBorder("Translation"));
         //panelTranslation.setBackground(Color.YELLOW);
         panelTranslation.setName("Translation");
-        panelOutils.add(panelTranslation, BorderLayout.NORTH);
+        panelOutils.add(panelTranslation, BorderLayout.NORTH);*/
         
-        JButton btHaut = new JButton("up");
+        /*JButton btHaut = new JButton("up");
         //btGauche.setVerticalTextPosition(AbstractButton.CENTER);
         //btGauche.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
         //btGauche.setMnemonic(KeyEvent.VK_D);
@@ -220,6 +221,7 @@ public class Fenetre2 extends JFrame {
         //panelZoom.setBackground(Color.CYAN);
         panelZoom.setName("ZOOM");
         panelOutils.add(panelZoom, BorderLayout.CENTER);
+        */
         
         
         
